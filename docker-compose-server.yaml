@@ -5,14 +5,14 @@ services:
     image: xuananhdocker/crawler
     container_name: crawler
     env_file:
-      - ./prepare-migrate/.env.crawler
+      - .env.crawler
     networks:
       - crawler
   consumer:
     image: xuananhdocker/consumer
     container_name: consumer
     env_file:
-      - ./prepare-migrate/.env.consumer
+      - .env.consumer
     networks:
       - crawler
   website:
@@ -26,7 +26,7 @@ services:
     image: xuananhdocker/api
     container_name: api
     env_file:
-      - ./prepare-migrate/.env.api
+      - .env.api
     ports:
       - "3000:3000"
     networks:
